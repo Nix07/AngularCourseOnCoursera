@@ -18,8 +18,9 @@
               <mat-form-field>
                 <input matInput placeholder="Password" type="password" 
                 [(ngModel)]="user.password" name="password" 
-                #password="ngModel" required>
+                #password="ngModel" required minlength="6">
                 <mat-error *ngIf="password.errors?.required">Password is required</mat-error>
+                <mat-error *ngIf="password.errors?.minlength">Minimum length should be 6</mat-error>
               </mat-form-field>
               <mat-checkbox [(ngModel)]="user.remember" name="remember">Remember Me</mat-checkbox>
           </p>
